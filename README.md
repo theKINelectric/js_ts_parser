@@ -1,16 +1,23 @@
 # Shared JavaScript / TypeScript parser
 
-This private Node package supplies the same syntax facts to PoopBags and
+This shared Node package supplies the same syntax facts to PoopBags and
 codeMUTATOR. It parses caller-supplied text with the pinned `@babel/parser`
 dependency. It does **not** import the subject, resolve its dependencies, read its
 files, run its tests, load its Babel/TypeScript configuration, or evaluate code.
 
-Requires Node 20 or newer. Install exactly the locked dependency graph:
+Requires Node 20 or newer. Clone beside the consumer repositories and install
+exactly the locked dependency graph:
 
 ```sh
+git clone https://github.com/theKINelectric/js_ts_parser.git
+cd js_ts_parser
 npm ci --ignore-scripts
 npm test
 ```
+
+The npm package is marked `private` to prevent accidental registry publication;
+the source repository is public. Consumers currently use a sibling Mix path
+dependency, so retain the checkout directory name `js_ts_parser`.
 
 The host application owns process timeouts, cancellation, environment isolation
 and output limits. The helper independently rejects source over **1,500,000 UTF-8
