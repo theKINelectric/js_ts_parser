@@ -1,0 +1,10 @@
+{
+  "name": "@kin-electric/js-ts-parser",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "Static JavaScript/TypeScript function, complexity and mutation-site facts for PoopBags and codeMUTATOR",
+  "engines": { "node": ">=20" },
+  "scripts": { "test": "node --test" },
+  "dependencies": { "@babel/parser": "7.29.9" }
+}
